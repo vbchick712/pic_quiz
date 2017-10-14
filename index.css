@@ -46,3 +46,17 @@ html, body {
 .pix:hover{
   border:#FC0 solid 5px;
 }
+
+#topbar{
+  height:100px;
+  margin:auto;
+  margin-top:50px;
+  color:#fff;
+  font-size:36px;
+  font-family:Arial, Helvetica, sans-serif;
+  width:800px;
+}
+
+.spacer{
+  height:30px;
+}
