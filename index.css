@@ -1,7 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-image:image(CC_Image3.png);
+  background-image:url(img/CC_Image3.png);
   font-family: Arial, Helvetica, sans-serif;
 }
 
