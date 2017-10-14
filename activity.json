@@ -1,0 +1,21 @@
+{"quizlist":[
+  {
+    "question":"Which pictures shows X?",
+    "option1":"img1.png",
+    "option2":"img2.png",
+    "option2":"img3.png"
+  },
+  {
+    "question":"Which picture shows Y?",
+    "option1":"img1.png",
+    "option2":"img2.png",
+    "option2":"img3.png"
+  },
+  {
+    "question":"Which picture shows Z?",
+    "option1":"img1.png",
+    "option2":"img2.png",
+    "option2":"img3.png"
+  }
+  ]
+}
