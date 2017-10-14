@@ -18,8 +18,41 @@ $.getJSON('activity.json', function(data) {
     questionBank[i][3]=data.quizlist[i].option3;
   }
   numberOfQuestions = questionBank.length;
-  alert(questionBank);
+  // alert(questionBank);
+  displayQuestion()
 })//gtjson
+
+function displayQuestion() {
+  var rnd=Math.random()*3;
+  rnd=Math.ceil(rnd);
+  var q1;
+  var q2;
+  var q3;
+
+  if(rnd==1){q1=questionBank[questionNumber][1]; q2=questionBank[questionNumber[2];
+  q3=questionBank[questionNumber][3];}1
+  if(rnd==2){q2=questionBank[questionNumber][1]; q3=questionBank[questionNumber][2];
+  q1=questionBank[questionNumber][3];}
+  if(rnd==3){q3=quesitonBank[questionNumber][1]; q1=questionBank[questionNumber][2];
+  q2=questionBank[questionNumber][3];}
+
+  $(stage).append('<div class = "questionText">' + questionBank[questionNumber][0] +
+  '</div><div id="1" class "pix"><img src="img/'+q1+'"></div><div id="2" class="pix"><img src="img/'+q2+'"></div><div id = "3" class= "pix"><img src="img/'+q3+'"></div>');
+
+  $('.pix').click(function(){
+    if(questionLock==false){questionLock=true;
+    //correct answer
+  if(this.id==rnd){
+    $(stage).append('<div class="feedback1">CORRECT</div>');
+    score++;
+  }
+  //wrong answer
+  if(this.id!=rnd){
+    $(stage).append('<div class="feedback2">WRONG</div>');
+  }
+  //setTimeout(function(){changeQuestion()},1000);
+}})
+}//display question
 
 
 });
