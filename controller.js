@@ -36,8 +36,7 @@ function displayQuestion() {
   if(rnd==3){q3=questionBank[questionNumber][1]; q1=questionBank[questionNumber][2];
   q2=questionBank[questionNumber][3];}
 
-  $(stage).append('<div class = "questionText">' + questionBank[questionNumber][0] +
-  '</div><div id="1" class "pix"><img src="img/'+q1+'"></div><div id="2" class="pix"><img src="img/'+q2+'"></div><div id = "3" class= "pix"><img src="img/'+q3+'"></div>');
+  $(stage).append('<div class = "questionText">' + questionBank[questionNumber][0] + '</div><div id="1" class="pix"><img src="img/'+q1+'"></div><div id="2" class="pix"><img src="img/'+q2+'"></div><div id="3" class="pix"><img src="img/'+q3+'"></div>');
 
   $('.pix').click(function(){
     if(questionLock==false){questionLock=true;
