@@ -92,3 +92,14 @@ html {
   position:absolute;
   top:170px;
 }
+
+@media screen and (max-width:800px) {
+  #topbar{margin-left:1%;margin-right:1%;width:98%;}
+  #navContent{margin:1%;width:98%;}
+  #game1{margin:1%;width:98%;}
+  #game2{margin:1%;width:98%;}
+}
+
+@media screen and (max-width:400px) {
+  .pix{margin:1px;margin-top:10px;}
+}
