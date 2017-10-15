@@ -8,6 +8,7 @@ var questionLock=false;
 var numberOfQuestions;
 var score=0;
 
+//gtjson
 $.getJSON('activity.json', function(data) {
 
   for(i=0;i<data.quizlist.length;i++){
@@ -20,8 +21,9 @@ $.getJSON('activity.json', function(data) {
   numberOfQuestions = questionBank.length;
   // alert(questionBank);
   displayQuestion()
-})//gtjson
+})
 
+//display question
 function displayQuestion() {
   var rnd=Math.random()*3;
   rnd=Math.ceil(rnd);
@@ -39,7 +41,7 @@ function displayQuestion() {
   $(stage).append('<div class = "questionText">' + questionBank[questionNumber][0] + '</div><div id="1" class="pix"><img src="img/'+q1+'"></div><div id="2" class="pix"><img src="img/'+q2+'"></div><div id="3" class="pix"><img src="img/'+q3+'"></div>');
 
   $('.pix').click(function(){
-    if(questionLock==false){questionLock=true;
+  if(questionLock==false){questionLock=true;
     //correct answer
   if(this.id==rnd){
     $(stage).append('<div class="feedback1">CORRECT</div>');
@@ -49,9 +51,25 @@ function displayQuestion() {
   if(this.id!=rnd){
     $(stage).append('<div class="feedback2">WRONG</div>');
   }
-  //setTimeout(function(){changeQuestion()},1000);
+  setTimeout(function(){changeQuestion()},1000);
 }})
-}//display question
+}//change question
+function changeQuestion(){
 
+  questionNumber++;
 
+  if(stage=="#game1"){stage2="#game1";stage="#game2";}
+  else{stage2="#game2";stage="#game1";}
+
+  if(questionNumber < numberOfQuestions){displayQuestion();}
+  else{displayFinalSlide();}
+
+  $(stage2).animate({"right": "+=800px"},"slow", function()
+{$(stage2).css('right','-1  800px');$(stage2).empty();});
+  $(stage).animate({"right": "+=800px"},"slow",function() {questionLock=false;});
+}//display final slide
+function displayFinalSlide(){
+
+  $(stage).append('<div class = "questionText">You have finished the quiz!<br><br>Total questions: '+numberOfQuestions+'<br>Correct answers: '+score+'</div>');
+}
 });
