@@ -19,7 +19,8 @@ $.getJSON('activity.json', function(data) {
     questionBank[i][3]=data.quizlist[i].option3;
   }
   numberOfQuestions = questionBank.length;
-  // alert(questionBank);
+
+
   displayQuestion()
 })
 
@@ -31,14 +32,11 @@ function displayQuestion() {
   var q2;
   var q3;
 
-  if(rnd==1){q1=questionBank[questionNumber][1]; q2=questionBank[questionNumber][2];
-  q3=questionBank[questionNumber][3];}
-  if(rnd==2){q2=questionBank[questionNumber][1]; q3=questionBank[questionNumber][2];
-  q1=questionBank[questionNumber][3];}
-  if(rnd==3){q3=questionBank[questionNumber][1]; q1=questionBank[questionNumber][2];
-  q2=questionBank[questionNumber][3];}
+  if(rnd==1){q1=questionBank[questionNumber][1];q2=questionBank[questionNumber][2];q3=questionBank[questionNumber][3];}
+  if(rnd==2){q2=questionBank[questionNumber][1];q3=questionBank[questionNumber][2];q1=questionBank[questionNumber][3];}
+  if(rnd==3){q3=questionBank[questionNumber][1];q1=questionBank[questionNumber][2];q2=questionBank[questionNumber][3];}
 
-  $(stage).append('<div class = "questionText">' + questionBank[questionNumber][0] + '</div><div id="1" class="pix"><img src="img/'+q1+'"></div><div id="2" class="pix"><img src="img/'+q2+'"></div><div id="3" class="pix"><img src="img/'+q3+'"></div>');
+  $(stage).append('<div class="questionText">'+questionBank[questionNumber][0]+'</div><div id="1" class="pix"><img src="img/'+q1+'"></div><div id="2" class="pix"><img src="img/'+q2+'"></div><div id="3" class="pix"><img src="img/'+q3+'"></div>');
 
   $('.pix').click(function(){
   if(questionLock==false){questionLock=true;
@@ -53,23 +51,26 @@ function displayQuestion() {
   }
   setTimeout(function(){changeQuestion()},1000);
 }})
-}//change question
+}
+
+
+//change question
 function changeQuestion(){
 
   questionNumber++;
 
   if(stage=="#game1"){stage2="#game1";stage="#game2";}
-  else{stage2="#game2";stage="#game1";}
+    else{stage2="#game2";stage="#game1";}
 
-  if(questionNumber < numberOfQuestions){displayQuestion();}
-  else{displayFinalSlide();}
+  if(questionNumber<numberOfQuestions){displayQuestion();}else{displayFinalSlide();}
 
-  $(stage2).animate({"right": "+=800px"},"slow", function()
-{$(stage2).css('right','-1  800px');$(stage2).empty();});
+  $(stage2).animate({"right": "+=800px"},"slow", function() {$(stage2).css('right','-800px');$(stage2).empty();});
   $(stage).animate({"right": "+=800px"},"slow",function() {questionLock=false;});
-}//display final slide
+}
+
+//display final slide
 function displayFinalSlide(){
 
-  $(stage).append('<div class = "questionText">You have finished the quiz!<br><br>Total questions: '+numberOfQuestions+'<br>Correct answers: '+score+'</div>');
+  $(stage).append('<div class="questionText">You have finished the quiz!<br><br>Total questions: '+numberOfQuestions+'<br>Correct answers: '+score+'</div>');
 }
 });
