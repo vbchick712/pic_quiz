@@ -30,7 +30,7 @@ function displayQuestion() {
   var q3;
 
   if(rnd==1){q1=questionBank[questionNumber][1]; q2=questionBank[questionNumber][2];
-  q3=questionBank[questionNumber][3];}1
+  q3=questionBank[questionNumber][3];}
   if(rnd==2){q2=questionBank[questionNumber][1]; q3=questionBank[questionNumber][2];
   q1=questionBank[questionNumber][3];}
   if(rnd==3){q3=questionBank[questionNumber][1]; q1=questionBank[questionNumber][2];
