@@ -8,7 +8,6 @@ html, body {
 html {
   background: url(img/CC_Image3.png) no-repeat center center fixed;
   -webkit-background-size: cover;
-  -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
@@ -49,6 +48,7 @@ html {
   float:left;
   border:5px solid white;
   cursor:pointer;
+  overflow: hidden;
 }
 
 .pix:hover{
@@ -70,7 +70,7 @@ html {
 }
 
 .feedback1{
-  width:150px
+  width:150px;
   padding:5px;
   font-size:30px;
   color:#ffffcc;
