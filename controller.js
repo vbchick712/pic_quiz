@@ -29,11 +29,11 @@ function displayQuestion() {
   var q2;
   var q3;
 
-  if(rnd==1){q1=questionBank[questionNumber][1]; q2=questionBank[questionNumber[2];
-  q3=questionBank[questionNumber][3];}1
+  if(rnd==1){q1=questionBank[questionNumber][1]; q2=questionBank[questionNumber][2];
+  q3=questionBank[questionNumber][3];}
   if(rnd==2){q2=questionBank[questionNumber][1]; q3=questionBank[questionNumber][2];
   q1=questionBank[questionNumber][3];}
-  if(rnd==3){q3=quesitonBank[questionNumber][1]; q1=questionBank[questionNumber][2];
+  if(rnd==3){q3=questionBank[questionNumber][1]; q1=questionBank[questionNumber][2];
   q2=questionBank[questionNumber][3];}
 
   $(stage).append('<div class = "questionText">' + questionBank[questionNumber][0] +
